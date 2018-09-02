@@ -14,7 +14,7 @@ matching via convex relaxation"](http://proceedings.mlr.press/v32/chend14.pdf), 
 To learn more about multi-object matching, please refer to [multiway-slides](https://www.dropbox.com/s/qsun5g4snw7jo5y/multiway-release.pdf?dl=0)
 
 ## Usage
-1 . Download [WILLOW-ObjectClass Dataset](http://www.di.ens.fr/willow/research/graphlearning/) at ```dataset/```
+1. Download [WILLOW-ObjectClass Dataset](http://www.di.ens.fr/willow/research/graphlearning/) at ```dataset/```
 ```
 cd dataset/
 wget http://www.di.ens.fr/willow/research/graphlearning/WILLOW-ObjectClass_dataset.zip
@@ -22,13 +22,13 @@ unzip WILLOW-ObjectClass_dataset.zip
 # remove problematic image and annotation
 rm -f WILLOW-ObjectClass/Face/image_0160.*
 ```
-2 . Download [Alexnet Weights](http://www.cs.toronto.edu/~guerzhoy/tf_alexnet/bvlc_alexnet.npy) at ```hypercols/```, and then extract feature descriptor ***hypercolumn*** from AlexNet.
+2. Download [Alexnet Weights](http://www.cs.toronto.edu/~guerzhoy/tf_alexnet/bvlc_alexnet.npy) at ```hypercols/```, and then extract feature descriptor ***hypercolumn*** from AlexNet.
 ```
 cd ../hypercols/
 wget http://www.cs.toronto.edu/~guerzhoy/tf_alexnet/bvlc_alexnet.npy
 python run_willow.py
 ```
-3 . run ```testWillow.m``` to test the code on WILLOW-ObjectClass dataset.
+3. run ```testWillow.m``` to test the code on WILLOW-ObjectClass dataset.
 
 ## Citation
 If you find this code useful for your research, please cite the following paper:
