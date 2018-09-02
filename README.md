@@ -10,6 +10,9 @@ matching problem by permutation synchronization"](http://people.cs.uchicago.edu/
 matching via convex relaxation"](http://proceedings.mlr.press/v32/chend14.pdf), ICML 2014.
 4. **MatchALS**: ["Multi-Image Matching via Fast Alternating Minimization"](http://www.cis.upenn.edu/~kostas/mypub.dir/xiaowei15iccv.pdf), CVPR 2015.
 
+## Tutorial slides
+To learn more about multi-object matching, please refer to [multiway-slides](https://www.dropbox.com/s/qsun5g4snw7jo5y/multiway-release.pdf?dl=0)
+
 ## Usage
 1 . Download [WILLOW-ObjectClass Dataset](http://www.di.ens.fr/willow/research/graphlearning/) at ```dataset/```
 ```
