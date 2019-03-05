@@ -7,7 +7,7 @@ wAngle = 0.3;
 kNNInit = 50; % number of candidate correpondences for each feature
 nMaxInit = 5000; % total number of candidate correpondences after optimization
 thScore = 0; % threshold of matching scores below which the match is ignored
-thRatio = 0; 
+thRatio = 1; 
 thDist = 0;
 
 ivargin = 1;
