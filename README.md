@@ -21,6 +21,8 @@ wget http://www.di.ens.fr/willow/research/graphlearning/WILLOW-ObjectClass_datas
 unzip WILLOW-ObjectClass_dataset.zip
 # remove problematic image and annotation
 rm -f WILLOW-ObjectClass/Face/image_0160.*
+# there is an annotation error in Cars_030a.mat (coordinate swap between 6th and 7th keypoint), replace it with the correct one
+mv Cars_030a.mat WILLOW-ObjectClass/Car/
 ```
 2. Download [Alexnet Weights](http://www.cs.toronto.edu/~guerzhoy/tf_alexnet/bvlc_alexnet.npy) at ```hypercols/```, and then extract feature descriptor ***hypercolumn*** from AlexNet.
 ```
