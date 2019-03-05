@@ -109,8 +109,8 @@ for i = 1:n
     Zi = Z(2*i-1:2*i,:);
     Yi = Y(ind,:);
     % hungarian
-    D = lambda*pdist2(Ci',Zi').^2;
-    distMatrix =  D - 2*rho*Yi - min(min(D - 2*rho*Yi));
+    D = lambda*pdist2(Ci',Zi');
+    distMatrix =  D - rho*Yi - min(min(D - rho*Yi));
     assignment = assignmentoptimal(double(distMatrix));
     Xhi = zeros(length(ind),K);
     q = find(assignment >= 1);

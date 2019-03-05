@@ -1,7 +1,7 @@
 %% Load data
 clear
 startup
-imgset = 'Winebottle'; %'Car','Duck','Face','Motorbike','Winebottle'
+imgset = 'Car'; %'Car','Duck','Face','Motorbike','Winebottle'
 datapath = sprintf('dataset/WILLOW-ObjectClass/%s/',imgset);
 savepath = sprintf('result/willow/%s',imgset);
 mkdir(savepath);
@@ -13,13 +13,14 @@ viewList = {viewList.name};
 % if show match
 showmatch = false;
 %% pairwise matching
-% if exist(savefile,'file')
-%     load(savefile,'pMatch');
-% else
-    % to apply linear matching, set 'wEdge' as 0
-    pMatch = runGraphMatchBatch(datapath,viewList,'all',[],'wEdge',0.5,'thscore',0);
+if exist(savefile,'file')
+    load(savefile,'pMatch');
+else
+    % to apply linear matching, set 'wEdge' as 0;
+    % to apply graph matching, set wEdge as an nonzero number, e.g., 1
+    pMatch = runGraphMatchBatch(datapath,viewList,'all',[],'wEdge', 0);
     save(savefile,'pMatch');
-% end
+end
 %% construct coordinate matrix C:2*m
 C = [];
 for i = 1:length(viewList)
@@ -37,8 +38,8 @@ end
 %          [Near-optimal joint object matching via convex relaxation, ICML 2014]   
 %  - 'als': MatchALS,
 %         [Multi-Image Matching via Fast Alternating Minimization, CVPR 2015]   
-[jMatch,jmInfo] = runJointMatch(pMatch,C,'Method','pg','univsize',10,...
-    'rank',3,'lambda',2);
+[jMatch,jmInfo] = runJointMatch(pMatch,C,'Method','pg','univsize',10, ...
+    'rank',3,'lambda', 1);
 % save(savefile,'-append','jMatch','jmInfo');
 %% Evaluate
 X1 = pMatch2perm(pMatch); % pairwise matching result

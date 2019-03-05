@@ -3,11 +3,11 @@ function mdata = graphMatch(viewPair,varargin)
 methodGM = 'rw'; % method for solving graph matching
 methodDisc = 'greedy'; % method for discretization 
 wEdge = 1; % weigth of rigidicity 
-wAngle = 1;
+wAngle = 0.3;
 kNNInit = 50; % number of candidate correpondences for each feature
 nMaxInit = 5000; % total number of candidate correpondences after optimization
 thScore = 0; % threshold of matching scores below which the match is ignored
-thRatio = 1; 
+thRatio = 0; 
 thDist = 0;
 
 ivargin = 1;
